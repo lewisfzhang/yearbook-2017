@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Title</title>
+<title>Senior Load</title>
 </head>
 <body>
 <?php
@@ -24,10 +24,31 @@
 	}
 	*/
 	while($row = $result->fetchArray(SQLITE3_ASSOC)){
+		//get vals from master table
 		$last = $row['Last'];
 		$first = $row['First'];
 		$num = $row['Student Number'];
-		echo "$num, $last <br>";
+		
+		//get email from seniorEmails table
+		$statement2 = $dbq -> prepare('SELECT StudentEmail FROM seniorEmails WHERE FirstName = :first AND LastName = :last;');
+		$statement2 -> bindValue(':first', $first);
+		$statement2 -> bindValue(':last', $last);
+		$result2 = $statement2 -> execute();
+		while($row2 = $result2->fetchArray(SQLITE3_ASSOC)){
+			$email = $row2['StudentEmail'];
+		}
+		
+		//create new row in quotations for each
+		$statement3 = $dbq -> prepare('INSERT INTO quotations (id, lastName, firstName, email) VALUES (:num, :last, :first, :email);');
+		$statement3 -> bindValue(':num', $num);
+		$statement3 -> bindValue(':last', $last);
+		$statement3 -> bindValue(':first', $first);
+		$statement3 -> bindValue(':email', $email);
+		/*
+		if($statement3 -> execute()){
+			echo "$num, $first $last, $email <br>";
+		}
+		*/
 	}
 ?>
 Meow

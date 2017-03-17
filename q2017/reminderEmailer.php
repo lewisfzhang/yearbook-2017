@@ -1,7 +1,7 @@
 <?php
     error_reporting(E_ERROR | E_PARSE); //doesn't report small errors
     require('PHPMailer/PHPMailerAutoload.php'); //PHPMailer file
-    $db = new SQLite3('quotations2016.sqlite3'); //connect
+    $db = new SQLite3('quotations2017.sqlite3'); //connect
 
     function sendMail($to, $subject, $message){ //send email
         $mail = new PHPMailer;
@@ -78,7 +78,7 @@
                     $processedStudent = $processedStudentArray[$index];
                     $processedTeacher = $processedTeacherArray[$index];
                     $disapprovalReason = $disapprovalReasonArray[$index];
-                    $fullURL = "http://times.bcp.org/yb/q2016/index.php?id=$url";
+                    $fullURL = "http://code.bcp.org/yb-dev/q2017/index.php?id=$url";
 
                     //send an email if student hasn't entered quotation yet
                     if(!isset($quotation) or $quotation == NULL or empty($quotation) or $quotation == "" or $processedStudent == -1 or $processedTeacher == -1){

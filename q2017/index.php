@@ -2,9 +2,9 @@
     error_reporting(E_ERROR | E_WARNING | E_PARSE); //doesn't report small errors
     require('PHPMailer/PHPMailerAutoload.php'); //PHPMailer file
     $url = $_GET['id']; //student's hash
-    $fullStudentURL = "http://times.bcp.org/yb/q2016/index.php?id=$url"; //the actual link to the student's quotation entry page
+    $fullStudentURL = "http://code.bcp.org/yb-dev/q2017/index.php?id=$url"; //the actual link to the student's quotation entry page
     if($url != NULL){ //if the url has the studnet's unique hash
-        $db = new SQLite3('quotations2016.sqlite3'); //connect
+        $db = new SQLite3('quotations2017.sqlite3'); //connect
         //get first name 
         $statement = $db -> prepare('SELECT * FROM quotations WHERE url = :url;'); 
         $statement -> bindValue(':url', $url);

@@ -1,7 +1,7 @@
 <?php
     error_reporting(E_ERROR | E_WARNING | E_PARSE); //doesn't report small errors
     require('PHPMailer/PHPMailerAutoload.php'); //PHPMailer file
-    $db = new SQLite3('quotations2016.sqlite3'); //connect
+    $db = new SQLite3('quotations2017.sqlite3'); //connect
     $quotationNum = $_GET['i']; //number of quotations
     $adminURL = $_POST["adminURL"]; //admin URL
     $mailSent = FALSE; //whether the email has been sent
@@ -28,7 +28,7 @@
 
     for($num = 0; $num <= $quotationNum; $num++){ //for each quotation 
         $studentURL = $_POST["studentURL$num"]; //get the specific hash for each quotation
-        $fullStudentURL = "http://times.bcp.org/yb/q2016/index.php?id=$studentURL"; //the actual link to the student's quotation entry page
+        $fullStudentURL = "http://code.bcp.org/yb-dev/q2017/index.php?id=$studentURL"; //the actual link to the student's quotation entry page
         $isStudentAdmin = $_POST["isStudentAdmin$num"]; //get whether it was a student admin 
         $radioState = $_POST["radioSet$num"]; //whether the quotation was approved, disapproved, or cleared
         $disapprovalReason = $_POST["disapprovalReason$num"];

@@ -2,7 +2,7 @@
     error_reporting(E_ERROR | E_WARNING | E_PARSE); //doesn't report small errors
     $url = $_GET['id']; //get admin's unique hash
     if(($url != NULL) and ($url != "")){ //if the url has the admin's unique hash
-        $db = new SQLite3('quotations2016.sqlite3'); //connect
+        $db = new SQLite3('quotations2017.sqlite3'); //connect
         //get entire row 
         $statement = $db -> prepare('SELECT * FROM admin WHERE url = :url;'); 
         $statement -> bindValue(':url', $url);

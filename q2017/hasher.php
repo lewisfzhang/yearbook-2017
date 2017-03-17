@@ -1,8 +1,8 @@
 <?php
     //will turn the student id's into 10 character hash values to append to url
-    $db = new SQLite3('quotations2016.sqlite3'); //connect
-    $studentNum = 386; //number of students in the table
-    for($rowNum = 1; $rowNum < ($studentNum + 1); $rowNum++){ //loop through every row
+    $db = new SQLite3('quotations2017.sqlite3'); //connect
+    $studentNum = 413; //number of students in the table
+    for($rowNum = 387; $rowNum < ($studentNum + 387 + 1); $rowNum++){ //loop through every row
         //get the student id
         $statement = $db -> prepare('SELECT id FROM quotations WHERE rowNumber = :rowNum;'); 
         $statement -> bindValue(':rowNum', $rowNum);
@@ -20,7 +20,10 @@
         WHERE rowNumber = :rowNum;'); 
         $statement2 -> bindValue(':rowNum', $rowNum);
         $statement2 -> bindValue(':last10Hash', $last10Hash);
-        $statement2 -> execute();
-        echo nl2br("$last10Hash \n"); //show on screen 
+        /*
+		if($statement2 -> execute()){
+			echo nl2br("$last10Hash \n"); //show on screen 
+		}
+		*/
     }
 ?>

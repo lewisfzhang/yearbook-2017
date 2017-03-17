@@ -1,6 +1,6 @@
 <?php
     error_reporting(E_ERROR | E_WARNING | E_PARSE); //doesn't report small errors
-    $db = new SQLite3('quotations2016.sqlite3'); //connect
+    $db = new SQLite3('quotations2017.sqlite3'); //connect
 ?>
 
 <!DOCTYPE html>

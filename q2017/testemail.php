@@ -8,6 +8,7 @@
         <?php
             //PHPMailer using local PHP SMTP server
 	        require('PHPMailer/PHPMailerAutoload.php');
+			/*	
 	        $mail = new PHPMailer;
 	        $mail->isSMTP();
 	        $mail->Host = 'localhost';
@@ -23,7 +24,7 @@
 	        $mail->From = "carillon@bcp.org";
 	        $mail->FromName = "The Carillon";
 	        $mail->AddAddress('carillon@bcp.org');
-            $mail->AddAddress('chanan.walia16@bcp.org');
+            $mail->AddAddress('kevin.gottlieb19@bcp.org');
 	        $mail->Subject = $subject;
 	        $mail->Body = $body;
 	        $mail->IsHTML(true);
@@ -34,6 +35,28 @@
 		        } else {
 			        echo 'All messages have been sent.';
 		        }
+			*/
+			function sendMail($to, $subject, $message){ //send email
+				$mail = new PHPMailer;
+				$mail->isSMTP();
+				$mail->Host = 'localhost';
+				$mail->Port = 25;
+				$mail->CharSet = 'UTF-8';
+
+				//Set initial mail headers
+				$mail->From = "carillon@bcp.org";
+				$mail->FromName = "The Carillon";
+				$mail->AddBCC('carillon@bcp.org');
+				$mail->AddAddress($to);
+				$mail->Subject = $subject;
+				$mail->Body = $message;
+				$mail->IsHTML(true);
+						
+				return $mail->send(); //will return true if sending worked
+			}
+			if(sendMail('kevin.gottlieb19@bcp.org', 'Test', 'Test')){
+				echo 'Sent!';
+			}
         ?>
     </body>
 </html>
