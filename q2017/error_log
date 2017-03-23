@@ -29,3 +29,18 @@
 [17-Mar-2017 02:09:42 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, no such table: quotations2017 in /var/www/html/yb-dev/q2017/seniorLoad.php on line 42
 [17-Mar-2017 02:09:42 UTC] PHP Fatal error:  Call to a member function bindValue() on boolean in /var/www/html/yb-dev/q2017/seniorLoad.php on line 43
 [17-Mar-2017 04:04:36 UTC] PHP Fatal error:  Class 'PHPMailer' not found in /var/www/html/yb-dev/q2017/testemail.php on line 40
+[23-Mar-2017 00:15:18 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ',' or ';' in /var/www/html/yb-dev/q2017/testemail.php on line 61
+[23-Mar-2017 00:26:41 UTC] PHP Fatal error:  Uncaught exception 'phpmailerException' with message 'SMTP Error: The following recipients failed: kevin.gottlieb19@bcp.org, carillon@bcp.org, kgred9@gmail.com' in /var/www/html/yb-dev/q2017/PHPMailer/class.phpmailer.php:1266
+Stack trace:
+#0 /var/www/html/yb-dev/q2017/PHPMailer/class.phpmailer.php(1061): PHPMailer->smtpSend('Date: Thu, 23 M...', 'Test\n')
+#1 /var/www/html/yb-dev/q2017/PHPMailer/class.phpmailer.php(969): PHPMailer->postSend()
+#2 /var/www/html/yb-dev/q2017/testemail.php(59): PHPMailer->send()
+#3 /var/www/html/yb-dev/q2017/testemail.php(61): sendMail('kevin.gottlieb1...', 'Test', 'Test')
+#4 {main}
+  thrown in /var/www/html/yb-dev/q2017/PHPMailer/class.phpmailer.php on line 1266
+[23-Mar-2017 00:30:26 UTC] PHP Warning:  require(PHPmailer/class.phpmailer.php): failed to open stream: No such file or directory in /var/www/html/yb-dev/q2017/testemail.php on line 40
+[23-Mar-2017 00:30:26 UTC] PHP Fatal error:  require(): Failed opening required 'PHPmailer/class.phpmailer.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /var/www/html/yb-dev/q2017/testemail.php on line 40
+[23-Mar-2017 01:05:06 UTC] PHP Parse error:  syntax error, unexpected 'ess' (T_STRING) in /var/www/html/yb-dev/q2017/testemail.php on line 28
+[23-Mar-2017 01:06:46 UTC] PHP Parse error:  syntax error, unexpected 'ess' (T_STRING) in /var/www/html/yb-dev/q2017/testemail.php on line 28
+[23-Mar-2017 01:07:40 UTC] PHP Parse error:  syntax error, unexpected 'ess' (T_STRING) in /var/www/html/yb-dev/q2017/testemail.php on line 28
+[23-Mar-2017 01:09:07 UTC] PHP Parse error:  syntax error, unexpected 'ess' (T_STRING) in /var/www/html/yb-dev/q2017/testemail.php on line 28
