@@ -1,6 +1,6 @@
 <?php
     error_reporting(E_ERROR | E_WARNING | E_PARSE); //doesn't report small errors
-    $db = new SQLite3('quotations2016.sqlite3'); //connect
+    $db = new SQLite3('quotations2017.sqlite3'); //connect
     $url = $_POST['URL']; //get url of admin
     if (isset($url) and ($url != "")) {
         $statement = $db -> prepare('UPDATE admin SET isLoggedIn = 0 WHERE url = :url'); 

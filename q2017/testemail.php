@@ -19,7 +19,7 @@
 	        $subject = "Test from Carillon";
 	        //$body = htmlspecialchars($_POST['message'])
 	        //echo $_POST['message'];
-	        $body = nl2br("Test");
+	        $body = "Test";
             
 	        //Set initial mail headers
 	        $mail->From = "carillon@bcp.org";

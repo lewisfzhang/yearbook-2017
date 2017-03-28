@@ -34,7 +34,7 @@
             function sendMail($to, $subject, $message){ //function to send email
                 $mail = new PHPMailer;
                 $mail->isSMTP();
-                $mail->Host = 'localhost';
+                $mail->Host = 'smtp.bcp.org';
                 $mail->Port = 25;
                 $mail->CharSet = 'UTF-8';
 
