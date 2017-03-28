@@ -82,6 +82,7 @@
 
                     //send an email if student hasn't entered quotation yet
                     if(!isset($quotation) or $quotation == NULL or empty($quotation) or $quotation == "" or $processedStudent == -1 or $processedTeacher == -1){
+						/*
                         if(!isset($quotation) or $quotation == NULL or empty($quotation) or $quotation == ""){
                             $emailMessage = 
                             "Hello $firstName, <br><br>
@@ -102,16 +103,34 @@
                             Thanks again, <br><br>
                             The Carillon Staff";
                         }
+						*/
+						//First Email:
+						$emailMessage =
+						"Hello $firstName, <br><br>
+						The Carillon will once again be putting your senior quotations in the yearbook! This is what your classmates will remember you by, so choose your quotation well. The quotation must be submitted online at: <a href='$fullURL'>$fullURL</a> by <strong>this Friday, March 31</strong>.<br><br>
+						Here are some simple guidelines: <br>
+							<ol>
+								<li>Keep your quotation to 100 characters</li>
+								<li>No emojis or special characters</li>
+								<li>No links (bit.ly, youtube.com, etc.)</li>
+								<li>Cite your source (if applicable)</li>
+							</ol>
+						If you have any questions, reply directly to this email. <br><br>
+						Thank you, <br><br>
+						The Carillon Staff";	
  
-                        if(sendMail($email, "Please Submit Your Carillon Senior Quotation", $emailMessage)){ //if mail is sent successfully
-                            echo "Mail sent to $email <br>";
+                        //if(sendMail($email, "Your Carillon Senior Quotation", $emailMessage)){ //if mail is sent successfully
+                            echo "Mail sent to $firstName at $email <br>";
+							/*
                         }
                         else{ //if send fails
                             echo "Oh no! Sending a reminder email has failed! Plase contact <a href='mailto:carillon@bcp.org'>carillon@bcp.org</a> so we can fix the problem.";
                         }
+						*/
                     }
                     $index++; //increment index
                 }
+				echo "$index <br> $emailMessage";
             }
         ?>
     </body>
