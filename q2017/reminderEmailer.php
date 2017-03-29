@@ -113,20 +113,22 @@
 								<li>Keep your quotation to 100 characters</li>
 								<li>No emojis or special characters</li>
 								<li>No links (bit.ly, youtube.com, etc.)</li>
-								<li>Cite your source (if applicable)</li>
+								<li><strong>Cite your source</strong></li>
 							</ol>
+						<strong>Please Note</strong>: Your quotation will be reviewed by the yearbook advisers and questionable quotations will be rejected.
+						<br><br>
 						If you have any questions, reply directly to this email. <br><br>
-						Thank you, <br><br>
+						Thank you, 
+						<br><br>
 						The Carillon Staff";	
  
                         //if(sendMail($email, "Your Carillon Senior Quotation", $emailMessage)){ //if mail is sent successfully
                             echo "Mail sent to $firstName at $email <br>";
-							/*
+							
                         }
-                        else{ //if send fails
+                        else{
                             echo "Oh no! Sending a reminder email has failed! Plase contact <a href='mailto:carillon@bcp.org'>carillon@bcp.org</a> so we can fix the problem.";
                         }
-						*/
                     }
                     $index++; //increment index
                 }
